@@ -29,7 +29,7 @@ import "./App.css";
 
   배포하기
     > npm run build
-    > npx serve -s dist
+    > npx serve -s dist : 베시쉘
 
   format 설정
   - File -> Preferenses -> settings -> format 검색
