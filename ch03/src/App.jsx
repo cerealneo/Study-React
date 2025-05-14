@@ -14,6 +14,13 @@ import LifeCycleComponent from "./components/LifeCycleComponent";
   날짜 : 2025/05/13
   이름 : 이민성
   내용 : ch03. 리액트 컴포넌트  
+
+  단축키
+    - rcc : 클래스 컴포넌트
+    - rfc : 컴포넌트 작성과 동시에 export
+    - rsf : props를 가진 컴포넌트
+    - rsc : 빈 div를 가진 화살표 함수 컴포넌트
+    - rafc : 화살표 함수 컴포넌트를 생성과 함께 export하고, 컴포넌트가 있는 js파일명이 div안에 작성됨
 */
 
 function App() {
