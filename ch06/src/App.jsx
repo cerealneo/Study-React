@@ -7,6 +7,11 @@ import { ContextUserComponent } from "./components/ContextUserComponent";
 import { ContextUserRegistComponent } from "./components/ContextUserRegistComponent";
 import { ReduxParentComponent } from "./components/ReduxParentComponent";
 
+/* npm install @reduxjs/toolkit react-redux
+
+npm add axios
+ */
+
 function App() {
   return (
     <>

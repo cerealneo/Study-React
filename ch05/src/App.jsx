@@ -8,6 +8,10 @@ import { RouterOutletComponent } from "./components/sub2/RouterOutletComponent";
 import { RouteDataComponent } from "./components/sub3/RouteDataComponent";
 import root from "./routers/root";
 
+/*
+  npm install react-router-dom 
+*/
+
 function App() {
   return (
     <>
