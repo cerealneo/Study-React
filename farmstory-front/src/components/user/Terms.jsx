@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getTerms } from "../../api/userAPI";
 
 export const Terms = () => {
+  const [termsText, setTermsText] = useState("");
+  const [privacyText, setPrivacyText] = useState("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getTerms();
+
+        setTermsText(data.terms);
+        setPrivacyText(data.privacy);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <section className="terms">
       <h2 className="tit">사이트 이용약관</h2>
       <table border="1">
         <tr>
           <td>
-            <textarea name="terms">약관내용</textarea>
+            <textarea name="terms" value={termsText}></textarea>
             <label>
               <input type="checkbox" className="terms" />
               &nbsp;동의합니다.
@@ -19,7 +38,7 @@ export const Terms = () => {
       <table border="1">
         <tr>
           <td>
-            <textarea name="privacy">약관내용</textarea>
+            <textarea name="privacy" value={privacyText}></textarea>
             <label>
               <input type="checkbox" className="privacy" />
               &nbsp;동의합니다.
