@@ -13,6 +13,7 @@ npm install @reduxjs/toolkit react-redux
 npm add axios
 npm install react-cookie
 npm install sass
+npm install js-cookies
 */
 
 function App() {
