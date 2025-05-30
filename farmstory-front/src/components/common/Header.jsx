@@ -1,17 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../../slices/loginSlice";
 import { getUserLogout } from "../../api/userAPI";
+import useAuth from "../../hooks/useAuth";
 
 export const Header = () => {
   const navigate = useNavigate();
 
-  // 리덕스 디스패치
-  const dispatch = useDispatch();
-
-  // 리덕스 스토어
-  const loginSlice = useSelector((state) => state.loginSlice);
+  const { username, logout } = useAuth();
 
   // 로그아웃
   const logoutHandler = () => {
@@ -29,7 +24,7 @@ export const Header = () => {
     fetchData();
 
     // 로그아웃 처리
-    dispatch(logout());
+    logout();
 
     // 로그인 이동
     navigate("/user/login");
@@ -42,7 +37,7 @@ export const Header = () => {
         </Link>
         <p>
           <Link to="/">HOME |</Link>
-          {!loginSlice.username ? (
+          {!username ? (
             <>
               <Link to="/user/login">로그인 |</Link>
               <Link to="/user/terms">회원가입 |</Link>
